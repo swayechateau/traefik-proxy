@@ -48,6 +48,7 @@ services:
       - "traefik.http.routers.api-secured.entrypoints=https" # <== Defining entrypoint for https, **ref: line 31
       - "traefik.http.routers.api-secured.tls.certresolver=mytlschallenge" # <== Defining certsresolvers for https
 
-#networks:
-#  proxy:
-#    external: true
+networks:
+  traefik:
+    external: true
+    name: traefik_default
